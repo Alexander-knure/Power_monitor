@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "dgSpecHash": "++Y9p9MpL0V6gFIzq/rNI0cx/PO1n9Y6JMfuf3J8ivY9/zeWCQnazvpptfu91A++Dy+K/YY1Xpd/FnTpfxuXoA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\alex2\\source\\repos\\_IPZ_\\_IPZ_\\_IPZ_.Web\\_IPZ_.Web.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\alex2\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\3.0.1\\microsoft.aspnetcore.app.ref.3.0.1.nupkg.sha512",
+    "C:\\Users\\alex2\\.nuget\\packages\\microsoft.netcore.app.ref\\3.0.0\\microsoft.netcore.app.ref.3.0.0.nupkg.sha512",
+    "C:\\Users\\alex2\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\3.0.3\\microsoft.netcore.app.host.win-x64.3.0.3.nupkg.sha512",
+    "C:\\Users\\alex2\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\3.0.0\\microsoft.windowsdesktop.app.ref.3.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}

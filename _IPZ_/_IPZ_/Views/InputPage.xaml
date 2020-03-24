@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="_IPZ_.Views.InputPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label x:Name="InputProductLabel" Text="Name of product" FontSize="Medium" TextColor="DarkSlateGray" HorizontalTextAlignment="Center"></Label>
+            <SearchBar x:Name="SearchBarProduct"
+                       Text="Apple"
+                       CancelButtonColor="Red"
+                       PlaceholderColor="DarkSlateGray"
+                       TextColor="#03bcac"
+                       FontSize="Medium"
+                       Focused="InputProduct_TextChanged"
+                       TextChanged="InputProduct_TextChanged"
+                       Unfocused="InputProduct_Unfocused"/>
+            <!--<ListView x:Name="InputListView" 
+                      RowHeight="20"
+                      ItemsSource="{Binding suggestProducts}" 
+                      ItemSelected="InputListView_ItemSelected"
+                      SeparatorVisibility="None" 
+                      IsVisible="False"/>
+-->
+            <Frame x:Name="InputFrame" CornerRadius="0" BackgroundColor="#03bcac" BorderColor="Black" Padding="0" HeightRequest="120" IsVisible="False">
+                <Grid Padding="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="4*"/>
+                        <ColumnDefinition Width="2.5*"/>
+                        <ColumnDefinition Width="2.5*"/>
+                        <ColumnDefinition Width="2.5*"/>
+                        <ColumnDefinition Width="4*"/>
+                        <ColumnDefinition Width="2.5*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Label Margin="1,1,1,1" FontSize="Micro" HorizontalTextAlignment="Center" Text="Name" VerticalOptions="Center" Grid.Column="0"/>
+                    <Label Margin="1,1,1,1" FontSize="Micro" HorizontalTextAlignment="Center" Text="Water" VerticalOptions="Center" Grid.Column="1"/>
+                    <Label Margin="1,1,1,1" FontSize="Micro" HorizontalTextAlignment="Center" Text="Proteins" VerticalOptions="Center" Grid.Column="2"/>
+                    <Label Margin="1,1,1,1" FontSize="Micro" HorizontalTextAlignment="Center" Text="Fats" VerticalOptions="Center" Grid.Column="3"/>
+                    <Label Margin="1,1,1,1" FontSize="Micro" HorizontalTextAlignment="Center" Text="Carbohydrates" VerticalOptions="Center" Grid.Column="4"/>
+                    <Label Margin="1,1,1,1" FontSize="Micro" HorizontalTextAlignment="Center" Text="Energy" VerticalOptions="Center" Grid.Column="5"/>
+
+                    <BoxView BackgroundColor="Black" WidthRequest="1" Grid.Column="0" HorizontalOptions="EndAndExpand" VerticalOptions="FillAndExpand"/>
+                    <BoxView BackgroundColor="Black" WidthRequest="1" Grid.Column="1" HorizontalOptions="EndAndExpand" VerticalOptions="FillAndExpand"/>
+                    <BoxView BackgroundColor="Black" WidthRequest="1" Grid.Column="2" HorizontalOptions="EndAndExpand" VerticalOptions="FillAndExpand"/>
+                    <BoxView BackgroundColor="Black" WidthRequest="1" Grid.Column="3" HorizontalOptions="EndAndExpand" VerticalOptions="FillAndExpand"/>
+                    <BoxView BackgroundColor="Black" WidthRequest="1" Grid.Column="4" HorizontalOptions="EndAndExpand" VerticalOptions="FillAndExpand"/>
+                    <BoxView BackgroundColor="Black" WidthRequest="1" Grid.Column="5" HorizontalOptions="EndAndExpand" VerticalOptions="FillAndExpand"/>
+                </Grid>
+            </Frame>
+            <ListView x:Name="InputListView" ItemsSource="{Binding suggestProducts}"  SeparatorVisibility="Default"  SelectionMode="None" IsVisible="False">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Frame Padding="0" BorderColor="Black" CornerRadius="0">
+                                <Grid Padding="0" RowSpacing="0">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="4*"/>
+                                        <ColumnDefinition Width="2.5*"/>
+                                        <ColumnDefinition Width="2.5*"/>
+                                        <ColumnDefinition Width="2.5*"/>
+                                        <ColumnDefinition Width="4*"/>
+                                        <ColumnDefinition Width="2.5*"/>
+                                    </Grid.ColumnDefinitions>
+
+                                    <Button x:Name="NameButton" BackgroundColor="#03bcac" Focused="Name_Clicked" Unfocused="InputProduct_Unfocused" Margin="1,1,1,1" FontSize="Micro" Text="{Binding Name}" VerticalOptions="Center" Grid.Column="0"/>
+                                    <Label x:Name="Water" Margin="1,1,1,1" FontSize="Micro" HorizontalTextAlignment="Center" Text="{Binding Water}" VerticalOptions="Center" Grid.Column="1"/>
+                                    <Label x:Name="Proteins" Margin="1,1,1,1" FontSize="Micro" HorizontalTextAlignment="Center" Text="{Binding Proteins}" VerticalOptions="Center" Grid.Column="2"/>
+                                    <Label x:Name="Fats" Margin="1,1,1,1" FontSize="Micro" HorizontalTextAlignment="Center" Text="{Binding Fats}" VerticalOptions="Center" Grid.Column="3"/>
+                                    <Label x:Name="Carbohydrates" Margin="1,1,1,1" FontSize="Micro" HorizontalTextAlignment="Center" Text="{Binding Carbohydrates}" VerticalOptions="Center" Grid.Column="4"/>
+                                    <Label x:Name="Energy" Margin="1,1,1,1" FontSize="Micro" HorizontalTextAlignment="Center" Text="{Binding Energy}" VerticalOptions="Center" Grid.Column="5"/>
+
+                                    <BoxView BackgroundColor="DarkSlateGray" WidthRequest="1" Grid.Column="0" HorizontalOptions="EndAndExpand" VerticalOptions="FillAndExpand"/>
+                                    <BoxView BackgroundColor="DarkSlateGray" WidthRequest="1" Grid.Column="1" HorizontalOptions="EndAndExpand" VerticalOptions="FillAndExpand"/>
+                                    <BoxView BackgroundColor="DarkSlateGray" WidthRequest="1" Grid.Column="2" HorizontalOptions="EndAndExpand" VerticalOptions="FillAndExpand"/>
+                                    <BoxView BackgroundColor="DarkSlateGray" WidthRequest="1" Grid.Column="3" HorizontalOptions="EndAndExpand" VerticalOptions="FillAndExpand"/>
+                                    <BoxView BackgroundColor="DarkSlateGray" WidthRequest="1" Grid.Column="4" HorizontalOptions="EndAndExpand" VerticalOptions="FillAndExpand"/>
+                                    <BoxView BackgroundColor="DarkSlateGray" WidthRequest="1" Grid.Column="5" HorizontalOptions="EndAndExpand" VerticalOptions="FillAndExpand"/>
+                                </Grid>
+                            </Frame>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            
+            <Label Text="Weight of product" FontSize="Medium" TextColor="DarkSlateGray" HorizontalTextAlignment="Center"></Label>
+            <Entry  x:Name="InputWeight"
+                    Text="100"
+                    PlaceholderColor="DarkSlateGray"
+                    TextColor="DarkSlateGray"
+                    HorizontalTextAlignment="Start"
+                    FontSize="Medium"
+                    TextChanged="InputWeight_TextChanged"/>
+
+            <Label Text="Meal time" FontSize="Medium" TextColor="DarkSlateGray" HorizontalTextAlignment="Center"/>
+            <TimePicker x:Name="TimeMeal" 
+                        Time="12:00:00"
+                        Visual="Material"
+                        PropertyChanged="TimeMeal_PropertyChanged"/>
+
+            <Label x:Name="lbInputProduct" Text="" FontSize="Medium" TextColor="DarkSlateGray" HorizontalTextAlignment="Center"></Label>
+
+            <Button x:Name="AddButton"
+                    Margin="0,0,0,0"
+                    Text = "Add" 
+                    BackgroundColor="#03bcac"
+                    TextColor="DarkSlateGray"
+                    FontSize="Large" 
+                    BorderWidth="0"
+                    Clicked="Button_Clicked"
+                    VerticalOptions="EndAndExpand"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

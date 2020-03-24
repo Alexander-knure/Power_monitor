@@ -1,0 +1,119 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:_IPZ_"
+             x:Class="_IPZ_.Views.ProductPage">
+    
+    <StackLayout Padding="0" Spacing="0" >
+        <SearchBar x:Name="SearchProduct"
+            Placeholder="Search product..."
+           CancelButtonColor="Red"
+           PlaceholderColor="DarkSlateGray"
+           TextColor="#03bcac"
+           HorizontalTextAlignment="Start"
+           FontSize="Small"
+           TextChanged="SearchBar_SearchButtonPressed"
+           Unfocused="SearchProduct_Unfocused"/>
+        
+        <Frame CornerRadius="0" BackgroundColor="#03bcac" BorderColor="Black" Padding="0" HeightRequest="60">
+            <Grid Padding="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="4*"/>
+                    <ColumnDefinition Width="2.5*"/>
+                    <ColumnDefinition Width="2.5*"/>
+                    <ColumnDefinition Width="2.5*"/>
+                    <ColumnDefinition Width="4*"/>
+                    <ColumnDefinition Width="2.5*"/>
+                </Grid.ColumnDefinitions>
+
+                <Label Margin="1,1,1,1" FontSize="Micro" HorizontalTextAlignment="Center" Text="Name" VerticalOptions="Center" Grid.Column="0"/>
+                <Label Margin="1,1,1,1" FontSize="Micro" HorizontalTextAlignment="Center" Text="Water" VerticalOptions="Center" Grid.Column="1"/>
+                <Label Margin="1,1,1,1" FontSize="Micro" HorizontalTextAlignment="Center" Text="Proteins" VerticalOptions="Center" Grid.Column="2"/>
+                <Label Margin="1,1,1,1" FontSize="Micro" HorizontalTextAlignment="Center" Text="Fats" VerticalOptions="Center" Grid.Column="3"/>
+                <Label Margin="1,1,1,1" FontSize="Micro" HorizontalTextAlignment="Center" Text="Carbohydrates" VerticalOptions="Center" Grid.Column="4"/>
+                <Label Margin="1,1,1,1" FontSize="Micro" HorizontalTextAlignment="Center" Text="Energy" VerticalOptions="Center" Grid.Column="5"/>
+
+                <BoxView BackgroundColor="Black" WidthRequest="1" Grid.Column="0" HorizontalOptions="EndAndExpand" VerticalOptions="FillAndExpand"/>
+                <BoxView BackgroundColor="Black" WidthRequest="1" Grid.Column="1" HorizontalOptions="EndAndExpand" VerticalOptions="FillAndExpand"/>
+                <BoxView BackgroundColor="Black" WidthRequest="1" Grid.Column="2" HorizontalOptions="EndAndExpand" VerticalOptions="FillAndExpand"/>
+                <BoxView BackgroundColor="Black" WidthRequest="1" Grid.Column="3" HorizontalOptions="EndAndExpand" VerticalOptions="FillAndExpand"/>
+                <BoxView BackgroundColor="Black" WidthRequest="1" Grid.Column="4" HorizontalOptions="EndAndExpand" VerticalOptions="FillAndExpand"/>
+                <BoxView BackgroundColor="Black" WidthRequest="1" Grid.Column="5" HorizontalOptions="EndAndExpand" VerticalOptions="FillAndExpand"/>
+            </Grid>
+        </Frame>
+
+        <!-- <ListView x:Name="SuggestionListView" ItemsSource="{Binding suggestProducts}"  SeparatorVisibility="Default"  SelectionMode="None" IsVisible="False">
+         -->
+        
+        <ListView x:Name="SuggestionListView" ItemsSource="{Binding suggestProducts}"  SeparatorVisibility="Default"  SelectionMode="None" IsVisible="False">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Frame Padding="0" BorderColor="Black" CornerRadius="0">
+                            <Grid Padding="0" RowSpacing="0">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="4*"/>
+                                    <ColumnDefinition Width="2.5*"/>
+                                    <ColumnDefinition Width="2.5*"/>
+                                    <ColumnDefinition Width="2.5*"/>
+                                    <ColumnDefinition Width="4*"/>
+                                    <ColumnDefinition Width="2.5*"/>
+                                </Grid.ColumnDefinitions>
+
+                                <Label x:Name="Name" Margin="1,1,1,1" FontSize="Micro" HorizontalTextAlignment="Center" Text="{Binding Name}" VerticalOptions="Center" Grid.Column="0"/>
+                                <Label x:Name="Water" Margin="1,1,1,1" FontSize="Micro" HorizontalTextAlignment="Center" Text="{Binding Water}" VerticalOptions="Center" Grid.Column="1"/>
+                                <Label x:Name="Proteins" Margin="1,1,1,1" FontSize="Micro" HorizontalTextAlignment="Center" Text="{Binding Proteins}" VerticalOptions="Center" Grid.Column="2"/>
+                                <Label x:Name="Fats" Margin="1,1,1,1" FontSize="Micro" HorizontalTextAlignment="Center" Text="{Binding Fats}" VerticalOptions="Center" Grid.Column="3"/>
+                                <Label x:Name="Carbohydrates" Margin="1,1,1,1" FontSize="Micro" HorizontalTextAlignment="Center" Text="{Binding Carbohydrates}" VerticalOptions="Center" Grid.Column="4"/>
+                                <Label x:Name="Energy" Margin="1,1,1,1" FontSize="Micro" HorizontalTextAlignment="Center" Text="{Binding Energy}" VerticalOptions="Center" Grid.Column="5"/>
+
+                                <BoxView BackgroundColor="DarkSlateGray" WidthRequest="1" Grid.Column="0" HorizontalOptions="EndAndExpand" VerticalOptions="FillAndExpand"/>
+                                <BoxView BackgroundColor="DarkSlateGray" WidthRequest="1" Grid.Column="1" HorizontalOptions="EndAndExpand" VerticalOptions="FillAndExpand"/>
+                                <BoxView BackgroundColor="DarkSlateGray" WidthRequest="1" Grid.Column="2" HorizontalOptions="EndAndExpand" VerticalOptions="FillAndExpand"/>
+                                <BoxView BackgroundColor="DarkSlateGray" WidthRequest="1" Grid.Column="3" HorizontalOptions="EndAndExpand" VerticalOptions="FillAndExpand"/>
+                                <BoxView BackgroundColor="DarkSlateGray" WidthRequest="1" Grid.Column="4" HorizontalOptions="EndAndExpand" VerticalOptions="FillAndExpand"/>
+                                <BoxView BackgroundColor="DarkSlateGray" WidthRequest="1" Grid.Column="5" HorizontalOptions="EndAndExpand" VerticalOptions="FillAndExpand"/>
+                            </Grid>
+                        </Frame>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+        <ListView x:Name="ProductsListView" ItemsSource="{Binding Products}" SeparatorVisibility="None" SelectionMode="None" IsVisible="true">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Frame Padding="0" BorderColor="Black" CornerRadius="0">
+                            <Grid Padding="0" RowSpacing="0">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="4*"/>
+                                    <ColumnDefinition Width="2.5*"/>
+                                    <ColumnDefinition Width="2.5*"/>
+                                    <ColumnDefinition Width="2.5*"/>
+                                    <ColumnDefinition Width="4*"/>
+                                    <ColumnDefinition Width="2.5*"/>
+                                </Grid.ColumnDefinitions>
+                                
+                                <Label Margin="1,1,1,1" FontSize="Micro" HorizontalTextAlignment="Center" Text="{Binding Name}" VerticalOptions="Center" Grid.Column="0"/>
+                                <Label Margin="1,1,1,1" FontSize="Micro" HorizontalTextAlignment="Center" Text="{Binding Water}" VerticalOptions="Center" Grid.Column="1"/>
+                                <Label Margin="1,1,1,1" FontSize="Micro" HorizontalTextAlignment="Center" Text="{Binding Proteins}" VerticalOptions="Center" Grid.Column="2"/>
+                                <Label Margin="1,1,1,1" FontSize="Micro" HorizontalTextAlignment="Center" Text="{Binding Fats}" VerticalOptions="Center" Grid.Column="3"/>
+                                <Label Margin="1,1,1,1" FontSize="Micro" HorizontalTextAlignment="Center" Text="{Binding Carbohydrates}" VerticalOptions="Center" Grid.Column="4"/>
+                                <Label Margin="1,1,1,1" FontSize="Micro" HorizontalTextAlignment="Center" Text="{Binding Energy}" VerticalOptions="Center" Grid.Column="5"/>
+
+                                <BoxView BackgroundColor="DarkSlateGray" WidthRequest="1" Grid.Column="0" HorizontalOptions="EndAndExpand" VerticalOptions="FillAndExpand"/>
+                                <BoxView BackgroundColor="DarkSlateGray" WidthRequest="1" Grid.Column="1" HorizontalOptions="EndAndExpand" VerticalOptions="FillAndExpand"/>
+                                <BoxView BackgroundColor="DarkSlateGray" WidthRequest="1" Grid.Column="2" HorizontalOptions="EndAndExpand" VerticalOptions="FillAndExpand"/>
+                                <BoxView BackgroundColor="DarkSlateGray" WidthRequest="1" Grid.Column="3" HorizontalOptions="EndAndExpand" VerticalOptions="FillAndExpand"/>
+                                <BoxView BackgroundColor="DarkSlateGray" WidthRequest="1" Grid.Column="4" HorizontalOptions="EndAndExpand" VerticalOptions="FillAndExpand"/>
+                                <BoxView BackgroundColor="DarkSlateGray" WidthRequest="1" Grid.Column="5" HorizontalOptions="EndAndExpand" VerticalOptions="FillAndExpand"/>
+                            </Grid>
+                        </Frame>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+    
+</ContentPage>
